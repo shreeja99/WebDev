@@ -1,20 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Task App</title>
+  <title>Task App</title>
 </head>
-
 <body>
 
-<h2>Task App</h2>
+<h2>Task Manager</h2>
 
-<form method="POST" action="/add">
-    <input name="task" placeholder="Enter task">
-    <button>Add</button>
-</form>
+<input id="taskInput" placeholder="Enter task">
+<button onclick="addTask()">Add Task</button>
 
-<br>
-<a href="/tasks">View Tasks (JSON)</a>
+<ul id="taskList"></ul>
+
+<script>
+async function addTask() {
+    let input = document.getElementById("taskInput").value;
+
+    await fetch("/tasks", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ title: input })
+    });
+
+    document.getElementById("taskInput").value = "";
+    loadTasks();
+}
+
+async function loadTasks() {
+    let res = await fetch("/tasks");
+    let tasks = await res.json();
+
+    let list = document.getElementById("taskList");
+    list.innerHTML = "";
+
+    tasks.forEach(t => {
+        let li = document.createElement("li");
+        li.innerText = t.title;
+        list.appendChild(li);
+    });
+}
+
+loadTasks();
+</script>
 
 </body>
 </html>
