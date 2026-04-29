@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Bill</title>
+
+<script>
+function generateBill() {
+
+    let params = new URLSearchParams(window.location.search);
+    let foods = params.getAll("food");
+
+    let total = 0;
+    let result = "";
+
+    foods.forEach(item => {
+        if (item == "Pizza") total += 200;
+        if (item == "Burger") total += 100;
+        if (item == "Cold Drink") total += 50;
+        result += item + "<br>";
+    });
+
+    document.getElementById("items").innerHTML = result;
+    document.getElementById("total").innerHTML = "Total: ₹" + total;
+}
+</script>
+
+</head>
+
+<body onload="generateBill()">
+
+<h2>Bill</h2>
+
+<p><b>Items:</b></p>
+<p id="items"></p>
+
+<p id="total"></p>
+
+<hr>
+
+<h3>Feedback</h3>
+
+<form>
+<textarea placeholder="Enter feedback"></textarea><br><br>
+<input type="submit" value="Submit Feedback">
+</form>
+
+</body>
+</html>

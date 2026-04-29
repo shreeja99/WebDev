@@ -1,0 +1,43 @@
+body {
+    font-family: Arial;
+    margin: 0;
+    background: #055c19;
+}
+
+/* Header */
+header {
+    background: #060000;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Navbar */
+nav {
+    background: #c25f03;
+    text-align: center;
+    padding: 10px;
+}
+
+nav a {
+    color: rgb(111, 13, 13);
+    margin: 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Cards */
+.card {
+    background: rgb(161, 158, 169);
+    margin: 20px;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Footer */
+footer {
+    background: #060101;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}

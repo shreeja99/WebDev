@@ -1,0 +1,24 @@
+body {margin:0; font-family:Arial;}
+
+.navbar {background:black;}
+.navbar a {color:white; padding:10px; display:inline-block;}
+
+.menu {display:inline-block; position:relative;}
+
+.submenu1 {
+  display:none;
+  position:absolute;
+  background:gray;
+}
+
+.menu:hover .submenu1 {display:block;}
+
+.submenu2 {
+  display:none;
+  position:absolute;
+  left:100%;
+  top:0;
+  background:darkgray;
+}
+
+.submenu1:hover .submenu2 {display:block;}

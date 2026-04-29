@@ -1,0 +1,45 @@
+body {
+    font-family: Arial;
+    margin: 0;
+}
+
+/* Header */
+header {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* Layout */
+.container {
+    display: flex;
+}
+
+/* Main content */
+.content {
+    flex: 3;
+    padding: 20px;
+}
+
+/* Sidebar */
+.sidebar {
+    flex: 1;
+    background: #ddd;
+    padding: 20px;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* 🔥 RESPONSIVE PART (IMPORTANT) */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+}
